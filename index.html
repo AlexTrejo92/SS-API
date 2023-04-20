@@ -18,7 +18,7 @@
     <aside class="sideContainer">
         <h2 class="boldTxt">Search for a City:</h2>
         <textarea class="cityInput"></textarea>
-        <button type="button" class="btn btn-primary">Search</button>
+        <button type="button" class="searchBtn btn-primary" id="srchBtn">Search</button>
         <hr>
         <button type="button" class="btn btn-secondary text-dark">Mexico City</button>
         <button type="button" class="btn btn-secondary text-dark">Monterrey</button>
@@ -32,7 +32,11 @@
     
     <div class="display">
         <div class="weatherContainer">
-            <p>in here the app will display the information from the API</p>
+            <p class="boldTxt ml-1">CHOSEN CITY <span>(date 01/01/2023)</span></p>
+            <p>Temp:</p>
+            <p>Wind:</p>
+            <p>Humidity:</p>
+
         </div>
             <p class="boldTxt">5-Day Forecast:</p>
         <section class="cardContainer">
@@ -64,8 +68,16 @@
             <p>Wind:</p>
             <p>Humidity:</p>
         </div>
+        <div class="card">
+            <p>date</p>
+            <p>icon</p>
+            <p>Temp:</p>
+            <p>Wind:</p>
+            <p>Humidity:</p>
+        </div>
         </section>
     </div>
 </section>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     font-family: 'Bebas Neue', 'Arial', 'Verdana';
     font-size: 40px;
     color: aliceblue;
-    background-image: linear-gradient(to right, rgb(69, 82, 196), rgb(63, 38, 110));
+    background-image: linear-gradient(to right, rgb(69, 113, 196), rgb(22, 37, 104));
     padding: 10px;
     padding-right: 25%;
     justify-content: flex-end;
@@ -15,10 +15,6 @@
 
 .content {
     display: flex;
-}
-
-.header h1 {
-    
 }
 
 .sideContainer {
@@ -32,8 +28,10 @@
 margin: 5px 0px;
 }
 
-.search-btn {
-
+.searchBtn {
+    padding: 10px 0px;
+    margin-top: 15px;
+    border-radius: 4px;
 }
 
 .cityInput {
@@ -54,6 +52,11 @@ margin: 5px 0px;
     margin: 10px 0px;
 }
 
+.weatherContainer p {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
 .boldTxt {
     font-size: x-large;
     font-weight: bold;
@@ -68,7 +71,8 @@ margin: 5px 0px;
     width: 300px;
     padding: 2px;
     margin: 2px;
-    background-color: cornflowerblue;
+    color: white;
+    background-color: rgb(22, 44, 85);
 }
 
 .card p {

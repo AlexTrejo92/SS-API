@@ -1,0 +1,76 @@
+:root {
+
+}
+
+.header {
+    display: flex;
+    font-family: 'Bebas Neue', 'Arial', 'Verdana';
+    font-size: 40px;
+    color: aliceblue;
+    background-image: linear-gradient(to right, rgb(69, 82, 196), rgb(63, 38, 110));
+    padding: 10px;
+    padding-right: 25%;
+    justify-content: flex-end;
+}
+
+.content {
+    display: flex;
+}
+
+.header h1 {
+    
+}
+
+.sideContainer {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 10px;
+}
+
+.btn {
+margin: 5px 0px;
+}
+
+.search-btn {
+
+}
+
+.cityInput {
+    border-radius: 5px;
+    border-color: grey;
+    margin-bottom: 5px;
+}
+
+.display {
+    width: 70%;
+}
+
+.weatherContainer {
+    border-color: black;
+    border-style: solid;
+    height: 200px;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.boldTxt {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 300px;
+    padding: 2px;
+    margin: 2px;
+    background-color: cornflowerblue;
+}
+
+.card p {
+    padding: 5px;
+}

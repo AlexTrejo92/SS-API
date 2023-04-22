@@ -17,8 +17,10 @@
 <section class="content">
     <aside class="sideContainer">
         <h2 class="boldTxt">Search for a City:</h2>
-        <textarea class="cityInput"></textarea>
-        <button type="button" class="searchBtn btn-primary" id="srchBtn">Search</button>
+        <form id="cityForm">
+            <input id='cityInput' class="cityInput form-control-lg"></input>
+            <button class="searchBtn btn-primary" id="srchBtn">Search</button>
+        </form>       
         <hr>
         <button type="button" class="btn btn-secondary text-dark">Mexico City</button>
         <button type="button" class="btn btn-secondary text-dark">Monterrey</button>
@@ -32,7 +34,7 @@
     
     <div class="display">
         <div class="weatherContainer">
-            <p class="boldTxt ml-1">CHOSEN CITY <span>(date 01/01/2023)</span></p>
+            <p class="boldTxt ml-1" id="chosenCityDisplay">CHOSEN CITY <span>(date 01/01/2023)</span></p>
             <p>Temp:</p>
             <p>Wind:</p>
             <p>Humidity:</p>

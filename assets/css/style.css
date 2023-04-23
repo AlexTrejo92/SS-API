@@ -45,7 +45,6 @@ margin: 5px 0px;
 .weatherContainer {
     border-color: black;
     border-style: solid;
-    height: 200px;
     width: 100%;
     margin: 10px 0px;
 }
@@ -62,22 +61,33 @@ margin: 5px 0px;
 
 .cardContainer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .card {
-    width: auto;
+    width: 180px;
     padding: 2px;
     margin: 2px;
     color: white;
-    background-color: rgb(22, 44, 85);
+    background-color: rgb(32, 46, 73);
+    border-radius: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .card p {
     padding: 5px;
 }
 
+.date {
+    font-weight: bold;
+}
+
 .hidden {
     display: none;
+}
+
+#icon {
+    height: 50px;
+    width: 50px;
 }

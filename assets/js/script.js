@@ -44,7 +44,7 @@ prints the results on the different DOM Elements */
 
 function getAPI(city){
 // geoCODING according to documentation to obtain the lat & lon coordinates.
-    var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + APIkey;
+    var queryURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + APIkey;
 
     //TODO: In the fetch code there should be an emergency input in case the server is not working or the user chose an invalid city.
     fetch(queryURL)
@@ -65,7 +65,7 @@ function getAPI(city){
 // Second API CALL to retrieve current weather stats
 function secondApiCall(latitude, longitude) {
                 
-    var currentcastURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIkey + '&units=metric';
+    var currentcastURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIkey + '&units=metric';
             
     fetch(currentcastURL)
     .then(function(secondResponse) {
@@ -91,7 +91,7 @@ function printToday(todayWeather) {
     var ccHumidity = todayWeather.main.humidity;
     var ccIcon = todayWeather.weather[0].icon;
     console.log(ccIcon);
-    var todaysIconURL = 'http://openweathermap.org/img/w/' + ccIcon + '.png'
+    var todaysIconURL = 'https://openweathermap.org/img/w/' + ccIcon + '.png'
     document.getElementById('chosenCityDisplay').innerText = chosenCity + '  (' + todaysDate + ')';
     var SOMETHING = document.getElementById('todayWicon');
     SOMETHING.setAttribute('src', todaysIconURL); 
@@ -102,7 +102,7 @@ function printToday(todayWeather) {
 
 // Last API Call to get 5 day forecast
 function thirdApiCall(latitude, longitude) {
-    var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIkey + '&units=metric'
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIkey + '&units=metric'
                     
     fetch(forecastURL)
     .then(function(thirdResponse){
@@ -124,7 +124,7 @@ var counter = 7;
 for (let i = 0; i < cardContainer.length; i++) {
     var forecast = fiveDayForecastWeather.list[counter]
     var iconcode = fiveDayForecastWeather.list[counter].weather[0].icon
-    var iconUrl = "http://openweathermap.org/img/w/" + iconcode + ".png"
+    var iconUrl = "https://openweathermap.org/img/w/" + iconcode + ".png"
     // var weatherIcon = fiveDayForecastWeather.list[counter].weather[0].icon;
     cardContainer[i].children[0].innerText = dayjs(forecast.dt_txt).format('MM/DD/YYYY');
 // This adds the icon according to the weather.

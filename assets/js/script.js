@@ -4,18 +4,26 @@ var searchCityForm = document.getElementById('cityForm');
 
 var city;
 
-var searchHistory = localStorage.getItem('historicData') || [] 
+// TODO: Code to store the results retrieved from the API and store them
+// var searchHistory = localStorage.getItem('Search History:')||[]; 
 
-// Function to create a button, give it a value, and append it to the parent container.
-// function 
+// Function to create a button with the user input city info and append it to the DOM.
+function createBtn(city) { 
+    var searchBtnContainer = document.querySelector('.btnContainer')
+    var searchHistoryBtn = document.createElement('button');
+    searchHistoryBtn.classList.add('btn', "btn-secondary", "text-dark");
+    searchHistoryBtn.innerText = city;
+    searchBtnContainer.appendChild(searchHistoryBtn);
+
+}
 
 // This function is the first to trigger all the other functions with APIs
 function handleCityFormSubmit(event) {
     event.preventDefault();
     city = document.getElementById('cityInput').value;
-    // TODO: Call function to add city to the buttons
+
     // searchHistory.push(city)
-    // localStorage.setItem('historicData', searchHistory);
+    localStorage.setItem('Search History:', city);
 
     if (!city) {
         window.alert('Please select a city');
@@ -26,13 +34,15 @@ function handleCityFormSubmit(event) {
 
     mainContent.classList.remove('hidden');
 
-    getAPI();
+    getAPI(city);
+
+    createBtn(city);
 }
 
 /* This function makes the calls to the API to retrieve the data and
 prints the results on the different DOM Elements */
 
-function getAPI(){
+function getAPI(city){
 // geoCODING according to documentation to obtain the lat & lon coordinates.
     var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + APIkey;
 
@@ -46,9 +56,9 @@ function getAPI(){
             console.log(data);
             var latitude = data[0].lat
             var longitude = data[0].lon
-            console.log(latitude, longitude)
             secondApiCall(latitude, longitude);
         })
+
 }
 
 // Function expression same as function secondApiCall(currentcastURL)
@@ -107,17 +117,13 @@ function thirdApiCall(latitude, longitude) {
 }
     // TODO: Write code to print the city weather data onto the containers and cards    
 function printForecast(fiveDayForecastWeather) {
-// var counter = 7;
-// var forecast = fiveDayForecastWeather.list[counter]
+
 // TODO: Loop to go through the futureWeather data, retrieve it and then print it on each card available.
 var cardContainer = document.querySelectorAll('.card');
-var iconContainer = document.getElementById('icon');
-console.log(cardContainer);
 var counter = 7;
 for (let i = 0; i < cardContainer.length; i++) {
     var forecast = fiveDayForecastWeather.list[counter]
     var iconcode = fiveDayForecastWeather.list[counter].weather[0].icon
-    console.log(iconcode);
     var iconUrl = "http://openweathermap.org/img/w/" + iconcode + ".png"
     // var weatherIcon = fiveDayForecastWeather.list[counter].weather[0].icon;
     cardContainer[i].children[0].innerText = dayjs(forecast.dt_txt).format('MM/DD/YYYY');
@@ -138,19 +144,6 @@ for (let i = 0; i < cardContainer.length; i++) {
 
 }
 
-
-
-    // TODO: Convert the UNIX value into a date to be printed
-    // function convertUnix(){
-    //     var unixTimestamp = currentWeather.dt;
-    //     console.log(unixTimestamp);
-    //     var currentDate = new Date(unixTimestamp * 1000);
-    //     console.log(currentDate);
-    //     return currentDate;
-    // }
-
-    // convertUnix();
-
 /*TODO: Code to add an event listener to the search btn click so that it stores
 the user input to the local storage and creates an historic button below the search bar*/
 
@@ -160,8 +153,6 @@ the user input to the local storage and creates an historic button below the sea
 //     console.log(userInput);
 //     localStorage.setItem('City', userInput);
 // }
-
-// TODO: Install an API for Icons so that when an specific weather is detected, the appropiate icon is printed on screen on the cards and on main display.
 
 // Even listener to trigger the APP functionality
 searchCityForm.addEventListener('submit', handleCityFormSubmit);

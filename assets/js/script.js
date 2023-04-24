@@ -135,24 +135,7 @@ for (let i = 0; i < cardContainer.length; i++) {
     cardContainer[i].children[4].innerText = 'Humidity: ' + forecast.main.humidity + '%';
     counter = counter+7;
 }
-
-
-// $('#forecastCard').each((singleCard)=> {
-//     console.log(singleCard)
-//     singleCard.children('.temp').text('test');
-// })
-
 }
 
-/*TODO: Code to add an event listener to the search btn click so that it stores
-the user input to the local storage and creates an historic button below the search bar*/
-
-// function retrieveCityData() {
-//     console.log('You clicked search button!')
-//     var userInput = document.querySelector('.cityInput').value;
-//     console.log(userInput);
-//     localStorage.setItem('City', userInput);
-// }
-
-// Even listener to trigger the APP functionality
+// Event listener to trigger the APP functionality
 searchCityForm.addEventListener('submit', handleCityFormSubmit);
